@@ -22,8 +22,6 @@ knitr::opts_chunk$set(cache = F, echo = T, warning = F, message = F)
 >
 >Ecological Research Unit
 >
->email: [florianorgeret@gmail.com](florianorgeret@gmail.com)
->
 
 # Aim
 
