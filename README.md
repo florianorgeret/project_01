@@ -7,10 +7,6 @@ at the top of the file list, then click on "Download ZIP" to save the whole proj
 
 For the demo we will use the penguins dataset from the R package [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
 
-![Alt text](https://allisonhorst.github.io/palmerpenguins/logo.png) 
+![](https://allisonhorst.github.io/palmerpenguins/logo.png) 
 
 ### Citation
-
-```{r, echo = T}
-citation("palmerpenguins")
-```
