@@ -1,0 +1,31 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Reproducibility demo
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of this repository (project_01) is to make of small example on how to make a project reproducible.
+
+In order to reproduce what I'm about to show, you can download the repository by clicking on the green "< > Code" button,
+at the top of the file list, then click on "Download ZIP" to save the whole project_01 somewhere on your computer.
+
+For the demo we will use the penguins dataset from the R package [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
+
+![](https://allisonhorst.github.io/palmerpenguins/logo.png) 
+
+```{r penguins}
+library(palmerpenguins)
+citation("palmerpenguins")
+```
