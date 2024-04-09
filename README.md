@@ -14,6 +14,10 @@ repository by clicking on the green `< > Code` button, at the top of the
 file list, then click on “*Download ZIP*” to save the whole project
 somewhere on your computer.
 
+Alternatively, in RStudio you can do as follows: File \> New Project \>
+Version Control \> Git and copy/paste the repository URL:
+<https://github.com/florianorgeret/project_01>
+
 For the demo we will use the penguins dataset from the R package
 [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
 
