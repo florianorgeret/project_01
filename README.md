@@ -7,7 +7,7 @@
 <!-- badges: end -->
 
 The goal of this repository (**project_01**) is to make of small example
-on how to make a project reproducible.
+on how to make a r project reproducible.
 
 In order to reproduce what I’m about to show, you can download the
 repository by clicking on the green `< > Code` button, at the top of the
@@ -20,6 +20,8 @@ For the demo we will use the penguins dataset from the R package
 ![](https://allisonhorst.github.io/palmerpenguins/logo.png)
 
 ``` r
+library(palmerpenguins)
+
 citation("palmerpenguins")
 #> To cite palmerpenguins in publications use:
 #> 

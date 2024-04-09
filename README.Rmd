@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of this repository (**project_01**) is to make of small example on how to make a project reproducible.
+The goal of this repository (**project_01**) is to make of small example on how to make a r project reproducible.
 
 In order to reproduce what I'm about to show, you can download the repository by clicking on the green `< > Code` button,
 at the top of the file list, then click on "*Download ZIP*" to save the whole project somewhere on your computer.
@@ -25,11 +25,10 @@ For the demo we will use the penguins dataset from the R package [palmerpenguins
 
 ![](https://allisonhorst.github.io/palmerpenguins/logo.png) 
 
-```{r, echo=F}
-library(palmerpenguins)
-```
 
 ```{r}
+library(palmerpenguins)
+
 citation("palmerpenguins")
 ```
 ## License for this demo
