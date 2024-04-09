@@ -19,7 +19,7 @@ if (!requireNamespace("palmerpenguins", quietly = TRUE)) {
 # Load the package
 library(palmerpenguins)
 ?palmerpenguins
-?penguins
+?penguins  ## penguins suck because they cannot fly
 
 # Load the penguins dataset
 data("penguins", package = "palmerpenguins")
