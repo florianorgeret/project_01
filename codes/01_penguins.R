@@ -12,6 +12,8 @@
 
 # Load the package
 library(palmerpenguins)
+library(usethis)
+
 ?palmerpenguins
 ?penguins
 
