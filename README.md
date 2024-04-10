@@ -18,10 +18,10 @@ Alternatively, in RStudio you can do as follows: File \> New Project \>
 Version Control \> Git and copy/paste the repository URL:
 <https://github.com/florianorgeret/project_01>
 
-When loading the R project with RStudio, pay attention to the message in
-the console, you will be inform of the R packages used for this project
-by runnin renv::status(). To actually install the same exact R packges
-version, then you could type renv::restore().
+When you load the R project with RStudio, pay attention to the message
+in the console; you’ll be informed of the R packages used for this
+project by running renv::status(). To install exactly the same version
+of R packages, you can type renv::restore().
 
 For the demo we will use the penguins dataset from the R package
 [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
