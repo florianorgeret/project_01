@@ -43,7 +43,7 @@ library(broom)#makes model outputs into tidy format
 
 ```{r}
 # activity-based directory organization ----
-# (data is stored elsewhere, likley because it is too big and/or reuse for several projects)
+# (data is stored elsewhere, likely because it is too big and/or reuse for several projects)
 # penguins_big <- read.csv(file.path(getwd(), "..","..", "bigdata", "penguins_big.csv"))
 # the ".." allows to  move to the parent directory (here twice)
 
