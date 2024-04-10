@@ -5,7 +5,7 @@
 # Swiss Ornithological Institute
 # Ecological Research Group
 # Last version: 08/04/2024
-#
+
 # Aim: this script is an example on how to load and save some data
 # from the palmerpenguins r package
 # and provide an example on how to organize folders to allow reproducibility
