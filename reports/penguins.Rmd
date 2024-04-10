@@ -30,7 +30,7 @@ This is an example on how to make a report using rmarkdown and the palmerpenguin
 # Packages
 
 ```{r packages}
-# library(palmerpenguins) #not needed because data saved locally with 01_penguins.R
+# library(palmerpenguins) #not needed because data saved locally with 01_penguin.R
 library(ggplot2)# for plotting
 library(tibble)# alternative to data.frame
 library(kableExtra)# for making tables
