@@ -5,7 +5,6 @@
 # Swiss Ornithological Institute
 # Ecological Research Group
 # Last version: 08/04/2024
-# florianorgeret@gmail.com
 
 # Aim: this script is an example on how to load and save some data
 # from the palmerpenguins r package
