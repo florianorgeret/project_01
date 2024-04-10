@@ -1744,7 +1744,11 @@ palmerpenguins dataset <a href="https://allisonhorst.github.io/palmerpenguins/ar
 <pre class="r"><code># library(palmerpenguins)
 library(ggplot2)# for plotting
 library(tibble)# alternative to data.frame
-library(kableExtra)# for making tables</code></pre>
+library(kableExtra)# for making tables
+library(broom)#makes model outputs into tidy format</code></pre>
+</div>
+<div id="analysis" class="section level1">
+<h1>Analysis</h1>
 <div id="data-loading" class="section level2">
 <h2>Data Loading</h2>
 <pre class="r"><code># activity-based directory organization ----
@@ -1796,7 +1800,7 @@ penguins &lt;- read.csv(file.path(getwd(), &quot;..&quot;, &quot;data&quot;, &qu
                        Std.Error = summary(model)$coefficients[, &quot;Std. Error&quot;],
                        t.value = summary(model)$coefficients[, &quot;t value&quot;],
                        Pr = summary(model)$coefficients[, &quot;Pr(&gt;|t|)&quot;])</code></pre>
-<pre class="r"><code>model_params %&gt;%
+<pre class="r"><code>model_params %&gt;% 
   kable(&quot;html&quot;, escape = F) %&gt;%
   kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;, &quot;responsive&quot;))</code></pre>
 <table class="table table-striped table-hover table-condensed table-responsive" style="color: black; margin-left: auto; margin-right: auto;">
@@ -1856,6 +1860,92 @@ flipper_length_mm
 </tr>
 </tbody>
 </table>
+<pre class="r"><code>model %&gt;% 
+  glance %&gt;% 
+  kable(&quot;html&quot;, escape = F) %&gt;%
+  kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;, &quot;responsive&quot;))</code></pre>
+<table class="table table-striped table-hover table-condensed table-responsive" style="color: black; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+r.squared
+</th>
+<th style="text-align:right;">
+adj.r.squared
+</th>
+<th style="text-align:right;">
+sigma
+</th>
+<th style="text-align:right;">
+statistic
+</th>
+<th style="text-align:right;">
+p.value
+</th>
+<th style="text-align:right;">
+df
+</th>
+<th style="text-align:right;">
+logLik
+</th>
+<th style="text-align:right;">
+AIC
+</th>
+<th style="text-align:right;">
+BIC
+</th>
+<th style="text-align:right;">
+deviance
+</th>
+<th style="text-align:right;">
+df.residual
+</th>
+<th style="text-align:right;">
+nobs
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0.7589925
+</td>
+<td style="text-align:right;">
+0.7582837
+</td>
+<td style="text-align:right;">
+394.2782
+</td>
+<td style="text-align:right;">
+1070.745
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+-2528.427
+</td>
+<td style="text-align:right;">
+5062.855
+</td>
+<td style="text-align:right;">
+5074.359
+</td>
+<td style="text-align:right;">
+52854796
+</td>
+<td style="text-align:right;">
+340
+</td>
+<td style="text-align:right;">
+342
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div id="package-citation" class="section level1">
@@ -1905,21 +1995,23 @@ flipper_length_mm
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] kableExtra_1.4.0 tibble_3.2.1     ggplot2_3.5.0   
+## [1] broom_1.0.5      kableExtra_1.4.0 tibble_3.2.1     ggplot2_3.5.0   
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Matrix_1.6-5      gtable_0.3.4      jsonlite_1.8.8    highr_0.10       
-##  [5] compiler_4.3.3    xml2_1.3.6        stringr_1.5.1     jquerylib_0.1.4  
-##  [9] splines_4.3.3     systemfonts_1.0.6 scales_1.3.0      yaml_2.3.8       
-## [13] fastmap_1.1.1     lattice_0.22-5    R6_2.5.1          labeling_0.4.3   
-## [17] knitr_1.46        munsell_0.5.1     svglite_2.1.3     bslib_0.7.0      
-## [21] pillar_1.9.0      rlang_1.1.3       utf8_1.2.4        cachem_1.0.8     
-## [25] stringi_1.8.3     xfun_0.43         sass_0.4.9        viridisLite_0.4.2
-## [29] cli_3.6.2         withr_3.0.0       magrittr_2.0.3    mgcv_1.9-1       
-## [33] digest_0.6.35     grid_4.3.3        rstudioapi_0.16.0 lifecycle_1.0.4  
-## [37] nlme_3.1-163      vctrs_0.6.5       evaluate_0.23     glue_1.7.0       
-## [41] farver_2.1.1      fansi_1.0.6       colorspace_2.1-0  rmarkdown_2.26   
-## [45] tools_4.3.3       pkgconfig_2.0.3   htmltools_0.5.8.1</code></pre>
+##  [1] sass_0.4.9        utf8_1.2.4        generics_0.1.3    tidyr_1.3.1      
+##  [5] xml2_1.3.6        stringi_1.8.3     lattice_0.22-5    digest_0.6.35    
+##  [9] magrittr_2.0.3    evaluate_0.23     grid_4.3.3        fastmap_1.1.1    
+## [13] jsonlite_1.8.8    Matrix_1.6-5      backports_1.4.1   mgcv_1.9-1       
+## [17] purrr_1.0.2       fansi_1.0.6       viridisLite_0.4.2 scales_1.3.0     
+## [21] jquerylib_0.1.4   cli_3.6.2         rlang_1.1.3       munsell_0.5.1    
+## [25] splines_4.3.3     withr_3.0.0       cachem_1.0.8      yaml_2.3.8       
+## [29] tools_4.3.3       dplyr_1.1.4       colorspace_2.1-0  vctrs_0.6.5      
+## [33] R6_2.5.1          lifecycle_1.0.4   stringr_1.5.1     pkgconfig_2.0.3  
+## [37] pillar_1.9.0      bslib_0.7.0       gtable_0.3.4      glue_1.7.0       
+## [41] systemfonts_1.0.6 xfun_0.43         tidyselect_1.2.1  highr_0.10       
+## [45] rstudioapi_0.16.0 knitr_1.46        farver_2.1.1      htmltools_0.5.8.1
+## [49] nlme_3.1-163      rmarkdown_2.26    svglite_2.1.3     labeling_0.4.3   
+## [53] compiler_4.3.3</code></pre>
 </div>
 
 

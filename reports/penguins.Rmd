@@ -34,7 +34,10 @@ This is an example on how to make a report using rmarkdown and the palmerpenguin
 library(ggplot2)# for plotting
 library(tibble)# alternative to data.frame
 library(kableExtra)# for making tables
+library(broom)#makes model outputs into tidy format
 ```
+
+# Analysis
 
 ## Data Loading
 
@@ -84,7 +87,15 @@ model_params <- tibble(Parameter = names(coef(model)),
 ```
 
 ```{r}
-model_params %>%
+model_params %>% 
+  kable("html", escape = F) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+
+```{r}
+model %>% 
+  glance %>% 
   kable("html", escape = F) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"))
 ```
