@@ -61,8 +61,12 @@ model_params <- tibble(Parameter = names(coef(model)),
                        t.value = summary(model)$coefficients[, "t value"],
                        Pr = summary(model)$coefficients[, "Pr(>|t|)"])
 
-# Print the table
+# Print the model_params# Print the table
 print(model_params)
+
+#Alernatively, you can also use the broom package
+library(broom)
+broom::tidy(model)
 
 # Optionally, save the table to a CSV file
 write.csv(model_params, "outputs/model_parameters.csv", row.names = FALSE)
