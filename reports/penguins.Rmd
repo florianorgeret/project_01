@@ -62,7 +62,8 @@ You can also embed plots, for example:
 ```{r, fig.align = 'center', fig.width = 10, fig.height = 8, dpi=300}
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
   geom_point() +
-  theme_minimal() +
+  geom_smooth(aes(group=1), method="lm")+
+  theme_minimal() + 
   labs(title = "Penguin Size Measurement",
        x = "Flipper Length (mm)",
        y = "Body Mass (g)")

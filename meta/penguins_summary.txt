@@ -8,3 +8,19 @@ tibble [344 × 8] (S3: tbl_df/tbl/data.frame)
  $ sex              : Factor w/ 2 levels "female","male": 2 1 1 NA 1 2 1 2 NA NA ...
  $ year             : int [1:344] 2007 2007 2007 2007 2007 2007 2007 2007 2007 2007 ...
 NULL
+      species          island    bill_length_mm  bill_depth_mm   flipper_length_mm  body_mass_g       sex     
+ Adelie   :152   Biscoe   :168   Min.   :32.10   Min.   :13.10   Min.   :172.0     Min.   :2700   female:165  
+ Chinstrap: 68   Dream    :124   1st Qu.:39.23   1st Qu.:15.60   1st Qu.:190.0     1st Qu.:3550   male  :168  
+ Gentoo   :124   Torgersen: 52   Median :44.45   Median :17.30   Median :197.0     Median :4050   NA's  : 11  
+                                 Mean   :43.92   Mean   :17.15   Mean   :200.9     Mean   :4202               
+                                 3rd Qu.:48.50   3rd Qu.:18.70   3rd Qu.:213.0     3rd Qu.:4750               
+                                 Max.   :59.60   Max.   :21.50   Max.   :231.0     Max.   :6300               
+                                 NA's   :2       NA's   :2       NA's   :2         NA's   :2                  
+      year     
+ Min.   :2007  
+ 1st Qu.:2007  
+ Median :2008  
+ Mean   :2008  
+ 3rd Qu.:2009  
+ Max.   :2009  
+               

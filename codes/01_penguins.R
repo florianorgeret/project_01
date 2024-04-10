@@ -11,11 +11,6 @@
 # from the palmerpenguins r package
 # and provide an example on how to organize folders to allow reproducibility
 
-# Install the palmerpenguins package if not already installed
-if (!requireNamespace("palmerpenguins", quietly = TRUE)) {
-  install.packages("palmerpenguins")
-}
-
 # Load the package
 library(palmerpenguins)
 ?palmerpenguins
@@ -36,15 +31,11 @@ data_summary <- capture.output({
 # Save the summary to a text file
 writeLines(data_summary, "meta/penguins_summary.txt")
 
-# Install and load ggplot2 if not already loaded
-if (!requireNamespace("ggplot2", quietly = TRUE)) {
-  install.packages("ggplot2")
-}
-
 library(ggplot2)
 # Create a scatter plot of flipper_length_mm vs body_mass_g
 ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
   geom_point() +
+  geom_smooth(aes(group=1), method="lm")+#group=1 to avoid having a regression per species
   theme_bw() +
   labs(title = "Penguin Size Measurement",
        x = "Flipper Length (mm)",
@@ -63,11 +54,6 @@ summary(model)
 saveRDS(model, "outputs/penguin_model.rds")
 
 # Extract model coefficients and create a table
-# Install and load ggplot2 if not already loaded
-if (!requireNamespace("tibble", quietly = TRUE)) {
-  install.packages("tibble")
-}
-
 library(tibble)
 model_params <- tibble(Parameter = names(coef(model)),
                        Estimate = coef(model),
