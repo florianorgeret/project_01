@@ -26,7 +26,10 @@ of R packages, you can type renv::restore().
 For the demo we will use the penguins dataset from the R package
 [palmerpenguins](https://allisonhorst.github.io/palmerpenguins/)
 
-![](https://allisonhorst.github.io/palmerpenguins/logo.png)
+
+
+
+<img src='https://allisonhorst.github.io/palmerpenguins/reference/figures/logo.png' align="right" />
 
 ``` r
 library(palmerpenguins)
